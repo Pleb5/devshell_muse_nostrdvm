@@ -22,8 +22,12 @@ outputs = { nixpkgs, flake-utils, nixvim, ... }:
                     nvim
                     pkgs.ripgrep
                     pkgs.just
+                    pkgs.cargo
+                    pkgs.pkg-config
+                    pkgs.openssl
                 ];
                 shellHook = ''
+                    export PATH="$HOME/.cargo/bin:$PATH";
                 '';
             };
         }
